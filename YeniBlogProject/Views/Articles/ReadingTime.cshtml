@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "SortArticlesReadingTime";
+}
+
+@{
+    Layout = "_LayoutLogin";
+}
+
+<div class="row">
+    
+    <div class="col-md-4" style="padding-left:100px;">
+        <h3>Select Your Interest</h3>
+        <hr />
+        @await Component.InvokeAsync("AllTopicList")
+    </div>
+    <div class="col-md-6">
+        <h4>Quick Read Articles</h4>
+        @await Component.InvokeAsync("SortArticlesReadingTime")
+    </div>
+    <div class="col-md-2">
+        <a asp-action="LoginPage" asp-controller="Users" class="btn btn-outline-success">Go TrendArticles</a>
+    </div>
+</div>
+

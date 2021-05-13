@@ -1,0 +1,30 @@
+﻿@model List<YeniBlogProject.Models.Topic>
+
+@{
+    ViewData["Title"] = "Topic";
+
+}
+@{
+    Layout = "_LayoutAdmin";
+}
+<h1>Topics</h1>
+
+
+
+<div class="row">
+    @foreach (Topic item in Model)
+    {
+        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">@item.TopicName</div>
+            <div class="card-body">
+                <p class="card-text">@item.Description</p>
+            </div>
+        </div>
+      
+    }
+    
+</div>
+<p>
+    <a class="btn btn-light" asp-action="Create">Create New Topics</a>
+</p>
+<br /><br /><br />

@@ -1,0 +1,17 @@
+﻿
+
+@if (Context.Request.Cookies["Email"] == null || Context.Request.Cookies["Email"] == "")
+ {
+   <a class="nav-link text-dark " asp-controller="Users" asp-action="Login"> Log in</a>
+ }
+ else
+ {
+  
+    <div class="nav-item nav-link">
+         @Context.Request.Cookies["Email"]
+    </div>
+    <div>
+        <a class="nav-item nav-link" asp-controller="Users" asp-action="Logout"> Log Out</a>
+
+    </div>
+ }

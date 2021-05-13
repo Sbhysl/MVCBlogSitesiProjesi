@@ -1,0 +1,11 @@
+﻿@model List<Topic>
+
+@foreach (var item in Model)
+{
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="checkedId" value="@item.TopicID" id="@item.TopicID">
+        <label class="form-check-label" for="flexCheckChecked">
+            @item.TopicName
+        </label>
+    </div>
+}

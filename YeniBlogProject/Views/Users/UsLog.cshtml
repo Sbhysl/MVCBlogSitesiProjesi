@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "UsLog";
+}
+<head>
+    <script type="text/javascript">
+
+        function wait() {
+            window.location = "http://localhost:37327/Users/Create"
+        }
+
+    </script>
+</head>
+<body onLoad="setTimeout('wait()', 5000)">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+
+            <form>
+                <p style="font-size:20px;">There is no such user. You are being directed to sign up.</p>
+            </form>
+
+        </div>
+    </div>
+
+</body>

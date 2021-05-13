@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "RegisterUserMessage";
+}
+
+<head>
+    <script type="text/javascript">
+
+        function wait() {
+            window.location = "http://localhost:37327/Users/Create"
+        }
+
+    </script>
+</head>
+<body onLoad="setTimeout('wait()', 3000)">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+
+            <form>
+                <p asp-action="" style="font-size:20px;">>This mail is used. Please try another mail.You are redirected to the page. </p> 
+            </form>
+
+        </div>
+    </div>
+
+</body>

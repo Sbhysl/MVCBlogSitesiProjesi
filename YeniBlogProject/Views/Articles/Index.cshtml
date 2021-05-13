@@ -1,0 +1,76 @@
+﻿@model IEnumerable<YeniBlogProject.Models.Article>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    Layout = "_LayoutLogin";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tittle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReadingTime)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.NumberOfClick)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.Raw(@item.Tittle)
+                </td>
+                <td>
+                    @Html.Raw(@item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReadingTime)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.NumberOfClick)
+                </td>*@
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.User.Mail)
+                </td>*@
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>*@
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedDate)
+                </td>*@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ArticleID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ArticleID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ArticleID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

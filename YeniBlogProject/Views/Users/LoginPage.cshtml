@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "LoginPage";
+}
+@{
+    Layout = "_LayoutLogin";
+}
+<link href="~/css/AfterLoginPage.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-md-4" style="padding-left:100px;">
+        <h3>Select Your Interest</h3>
+        <hr />
+        @await Component.InvokeAsync("AllTopicList")
+    </div>
+    <div class="col-md-6">
+       
+        @await Component.InvokeAsync("TrendArticleList")
+    </div>
+    <div class="col-md-2">
+        <a asp-action="ReadingTime" asp-controller="Articles" class="btn btn-outline-success">Sort By Reading Time</a>
+    </div>
+</div>
+<hr />

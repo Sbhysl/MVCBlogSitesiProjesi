@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "DeletePage";
+}
+
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <div>
+                Please enter the e-mail address you want to delete.
+            </div>
+            <form asp-action="Delete" asp-controller="Users">
+                <input type="text" id="login" class="fadeIn second" name="mail" placeholder="e-mail">
+                <input type="submit" class="fadeIn fourth" value="Delete">
+
+            </form>
+
+        </div>
+    </div>
+
+</body>

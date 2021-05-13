@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "ArticleApproval";
+}
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<div class="row">
+    <div class="col-md-6" style="padding-left:100px;">
+        <h3>Not Active Articles</h3>
+        @await Component.InvokeAsync("NotActiveArticles")
+    </div>
+    <div class="col-md-6" style="padding-left:100px;">
+        <h3>Active Articles</h3>
+        @await Component.InvokeAsync("ActiveArticles")
+    </div>
+</div>
+

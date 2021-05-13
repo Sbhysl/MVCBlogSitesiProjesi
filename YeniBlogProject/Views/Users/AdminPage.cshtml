@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "AdminPage";
+}
+
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="~/images/Approve.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Approve Articles</h5>
+                <p class="card-text">uygunluğu kontrol et</p>
+                <a asp-action="ArticleApproval" asp-controller="Articles" class="btn btn-primary">Go Articles</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="~/images/rejected.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Rejected Articles</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a asp-action="ArticleApproval" asp-controller="Articles" class="btn btn-primary">Go Articles</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top"  src="~/images/Topics.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Add Topic</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a asp-action="Create" asp-controller="Topics" class="btn btn-primary">Go Topics</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />

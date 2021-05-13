@@ -1,0 +1,25 @@
+﻿@model List<Topic>
+
+<form asp-action="FilteredArticles" asp-controller="Articles">
+    @foreach (var item in Model)
+    {
+        <div class="row">
+
+
+            <div class="form-check">
+
+                <input class="form-check-input" type="radio" name="topicId" id="@item.TopicID" value="@item.TopicID">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    @Html.DisplayFor(modelItem => item.TopicName)
+                </label>
+            </div>
+
+
+        </div>
+
+    }
+    <button type="submit" class="btn-dark">
+        Filter
+    </button>
+</form>
+

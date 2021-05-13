@@ -1,0 +1,65 @@
+﻿@model List<YeniBlogProject.Models.Topic>
+
+@{
+    ViewData["Title"] = "Main Page";
+}
+
+<link href="~/css/bootstrap.css" rel="stylesheet" />
+<link href="~/css/mainpage.css" rel="stylesheet" />
+<div>
+    <br /><br style="background-color:#ffc017" />
+    <div class="row mainpage">
+        <div class="col-md-6">
+            <div style="margin-top:30px;">
+
+            </div>
+            <div class="row" style="margin-bottom:10px !important; margin-left:120px !important;">
+                Where good ideas<br />find you
+            </div>
+            <div class="row" margin-left:100px !important;>
+
+            </div>
+            <div class="row">
+
+            </div>
+            <div class="row" style="font-size:20px; margin-left:40px; font-family:Arial;letter-spacing:normal; margin-left:120px;">
+                Read and share new perspectives on just about any topic. Everyone’s welcome
+                <a href="#" style="color:black;"> Learn more</a>
+            </div>
+            <div class="row" style="font-size:20px; margin-left:120px; font-family:Arial; letter-spacing:normal;flex-wrap: unset;">
+
+            </div>
+            <div class="row">
+                <form class="d-flex">
+                    <button asp-controller="Users" asp-action="Create" class="btn btn-outline-success" type="submit" style="margin-left:150px;">Get Started</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img class="ilkresim" src="~/images/ilkresim.png" />
+        </div>
+    </div>
+   
+</div>
+<hr />
+<div>
+    <div class="row">
+        <div class="col-md-4" style="padding-left:50px;">
+            <div>
+                <h3>Select Topics</h3>
+            </div>
+
+            @await Component.InvokeAsync("TopicList")
+
+        
+        </div>
+
+        <div class="col-md-8">
+            @await Component.InvokeAsync("GetRandomArticles")
+           
+        </div>
+    </div>
+</div>
+<div>
+    <br /><br />
+</div>

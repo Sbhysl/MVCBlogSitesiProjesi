@@ -1,0 +1,109 @@
+﻿@model List<Article>
+
+@{
+    ViewData["Title"] = "Main Page";
+}
+<style>
+    p span:first-child {
+        display: inline;
+    }
+
+    p span:nth-child(2) {
+        display: none;
+    }
+</style>
+<link href="~/css/bootstrap.css" rel="stylesheet" />
+<link href="~/css/mainpage.css" rel="stylesheet" />
+<div>
+    <br /><br style="background-color:#ffc017" />
+    <div class="row mainpage">
+        <div class="col-md-6">
+            <div style="margin-top:30px;">
+
+            </div>
+            <div class="row" style="margin-bottom:10px !important; margin-left:120px !important;">
+                Where good ideas<br />find you
+            </div>
+            <div class="row" margin-left:100px !important;>
+
+            </div>
+            <div class="row">
+
+            </div>
+            <div class="row" style="font-size:20px; margin-left:40px; font-family:Arial;letter-spacing:normal; margin-left:120px;">
+                Read and share new perspectives on just about any topic. Everyone’s welcome
+                <a href="#" style="color:black;"> Learn more</a>
+            </div>
+            <div class="row" style="font-size:20px; margin-left:120px; font-family:Arial; letter-spacing:normal;flex-wrap: unset;">
+
+            </div>
+            <div class="row">
+                <form class="d-flex">
+                    <button asp-controller="Users" asp-action="Create" class="btn btn-outline-success" type="submit" style="margin-left:150px;">Get Started</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img class="ilkresim" src="~/images/ilkresim.png" />
+        </div>
+    </div>
+
+</div>
+<hr />
+<div>
+    <div class="row">
+        <div class="col-md-4" style="padding-left:50px;">
+            <div>
+                <h3>Select Topics</h3>
+            </div>
+
+            @await Component.InvokeAsync("TopicList")
+
+           
+        </div>
+
+        <div class="col-md-8">
+            @foreach (var item in Model)
+            {
+                <div class="card mb-4">
+                    <img src="" class="card-img-top img-thumbnail" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">@item.Tittle</h4>
+                        <p class="card-text">
+                            <span id="dots-@item.ArticleID">@Html.Raw(@item.Content.Substring(0, Math.Min(item.Content.Length, 100))) ... </span>
+                            <span id="more-@item.ArticleID">@Html.Raw(@item.Content)</span>
+                        </p>
+                        <button onclick="myFunction(@item.ArticleID)" id="myBtn-@item.ArticleID" type="button" class="btn btn-success">Read More</button>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Release Date:@item.CreatedDate Reading Time:@item.ReadingTime Number Of Click:@item.NumberOfClick
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div>
+    <br /><br />
+</div>
+
+<script>
+
+    function myFunction(id) {
+        var dots = document.getElementById("dots-" + id);
+        var moreText = document.getElementById("more-" + id);
+        var btnText = document.getElementById("myBtn-" + id);
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less";
+            moreText.style.display = "inline";
+        }
+
+    }
+</script>

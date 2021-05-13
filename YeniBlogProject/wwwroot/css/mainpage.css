@@ -1,0 +1,27 @@
+﻿body {
+}
+.mainpage {
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 70px;
+    letter-spacing: -0.05em;
+    background-color: #ffc017;
+    border-bottom:solid 1px;
+}
+.ilkresim{
+
+    height:400px;
+    width:500px;
+    margin-top:15px;
+}
+.articlebackside {
+    padding: 10px;
+    background-color: rgba(249, 249, 249, 0.95);
+    font-family: Arial;
+    font-weight: 200;
+    border-bottom: 1px solid black;
+    margin-left: 50px;
+    margin-right:150px;
+    height:100px;
+}
